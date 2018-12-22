@@ -7,14 +7,15 @@ package javatask;
 public class JavaTask {
 
     // to count number of 89
-    static int count = 0;
+    static int count = 0; // O(1)
 
     // main method
     public static void main(String[] args) {
 
-        int output = 0;
+        int output = 0; // O(1)
 
-        //loop to check numbers generated from 1 to 10000000
+        // loop to check numbers generated from 1 to 10000000
+        // O(n)
         for (int i = 1; i < 10000000; ++i) {
             int num = i;
             // call method of CheckingNumber
@@ -28,10 +29,10 @@ public class JavaTask {
     public static int CheckingNumber(int num) {
 
         // call method of CheckingDigits
-        int result = CheckingDigits(num);
+        int result = CheckingDigits(num); // O(1)
         
         // endless loop
-        for (;;) {
+        for (;;) { // undefined O(infinte)
 
             if (result == 89) {
                 count++;
@@ -51,12 +52,12 @@ public class JavaTask {
     public static int CheckingDigits(int num) {
 
         // turn int number to string
-        String strNum = "" + num;
-        int squareSum = 0;
+        String strNum = "" + num; // O(1)
+        int squareSum = 0; // O(1)
 
         // loop throught digits of each number
-        for (int i = 0; i < String.valueOf(num).length(); ++i) {
-            int digit = Integer.parseInt(String.valueOf(strNum.charAt(i)));
+        for (int i = 0; i < String.valueOf(num).length(); ++i) { // O(n^2)
+            int digit = Integer.parseInt(String.valueOf(strNum.charAt(i))); // O(1)
             
             // find square of each digit and sum squares of digits
             squareSum += (digit * digit);
@@ -67,3 +68,6 @@ public class JavaTask {
     }
 
 }
+
+//Total Complexity Time = O(1)+O(1)+O(n)+O(1)+O(1)+O(1)+O(n^2)+O(1)
+//                      = O(6+n+n^2)
