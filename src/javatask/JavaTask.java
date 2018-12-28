@@ -8,12 +8,17 @@ public class JavaTask {
 
     // to count number of 89
     static int count = 0; // O(1)
+    static int output = 0; // O(1)
 
     // main method
     public static void main(String[] args) {
+        
+        System.out.println("number of starting number that reached to 89 is= " + PrintResult()); 
 
-        int output = 0; // O(1)
-
+    }
+    
+    public static int PrintResult(){
+        
         // loop to check numbers generated from 1 to 10000000
         // O(n)
         for (int i = 1; i < 10000000; ++i) {
@@ -21,8 +26,8 @@ public class JavaTask {
             // call method of CheckingNumber
             output = CheckingNumber(num);
         }
-        // print the counter of 89
-        System.out.println("number of starting number that reached to 89 is= " + output);
+
+        return output;
     }
 
     // method to check each number
